@@ -4,6 +4,11 @@ header {
     border-radius: 20px;
 }
 
+.main-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .header-main-title {
     color: var(--clr0); 
     font-size: 50px;
@@ -11,16 +16,24 @@ header {
 }
 
 .header-main-nav {
+    display: flex;
     font-size: 30px;
-}
-/*
-header h5 span {
-    background-color: rgb(202, 76, 76);
-    padding: 4px;
-    border-radius: 4px;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
 }
 
-header h5 a {
-    font-size: 0.8em;
-    color: yellowgreen;
-}*/
+.main-logo {
+    height: 10vh;
+}
+
+.header-btn {
+    height: 3vh;
+    width: 6vw;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(71, 71, 161);
+    color: white;
+    font-family: "Copperplate Gothic Light";
+}

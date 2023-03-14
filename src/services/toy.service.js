@@ -10,31 +10,38 @@ export const toyService = {
   save,
 }
 
-const KEY = 'toy_DB'
+const TOYS_KEY = 'toyDB'
 const BASE_URL = 'toy/'
 _createToys()
 
-function query(filterBy) {
-  // return storageService.query(KEY).then(toys => {
-  //   return _filterToys(filterBy, toys)
-  // })
+function query(filterBy = '') {
+  /*return storageService.query(TOYS_KEY)
+        .then(todos => {
+            if (filterBy.txt) {
+                const regex = new RegExp(filterBy.txt, 'i')
+                todos = todos.filter(todo => regex.test(todo.name))
+            }
+            return todos
+        })*/
   return httpService.get(BASE_URL, filterBy)
 }
 
 function getById(toyId) {
-  // return storageService.get(KEY, id)
+  //return storageService.get(TOYS_KEY, toyId)
   return httpService.get(BASE_URL + toyId)
 }
 
 function remove(toyId) {
-  // return storageService.remove(KEY, toyId)
+  //return storageService.remove(TOYS_KEY, toyId)
   return httpService.delete(BASE_URL + toyId)
 }
 
-function save(toyToSave) {
-  // return toyToSave._id ?
-  //   storageService.put(KEY, toyToSave) :
-  //   storageService.post(KEY, toyToSave)
+function save(toy) {
+    /*if (toy._id) {
+        return storageService.put(TOYS_KEY, toy)
+    } else {
+        return storageService.post(TOYS_KEY, toy)
+    }*/
 
   return toyToSave._id ?
     httpService.put(BASE_URL, toyToSave) :
@@ -45,10 +52,10 @@ function getEmptyToy() {
   return {
     _id: '',
     name: '',
-    price: '',
+    price: null,
     labels: [],
-    createdAt: Date.now(),
-    inStock: true,
+    createdAt: null,
+    inStock: null,
   }
 }
 
@@ -63,7 +70,7 @@ function _filterToys(filterBy, toys) {
 }
 
 function _createToys() {
-  let toys = JSON.parse(localStorage.getItem(KEY))
+  let toys = utilService.loadFromStorage(TOYS_KEY)
 
   if (!toys || !toys.length) {
     toys = [
@@ -74,18 +81,19 @@ function _createToys() {
       _createToy('Poodle', 90),
       _createToy('Scottie', 110),
     ]
-    localStorage.setItem(KEY, JSON.stringify(toys))
+    utilService.saveToStorage(TOYS_KEY, toys)
   }
   return toys
 }
 
-function _createToy(name, price) {
-  return {
-    _id: utilService.makeId(),
-    name,
-    price,
-    labels: [],
-    createdAt: Date.now(),
-    inStock: true,
-  }
+function _createToy(name = '', price = 0, labels = []) {
+  const toy = getEmptyToy()
+  toy._id = utilService.makeId()
+  toy.name = name
+  toy.price = price
+  toy.labels = labels
+  toy.createdAt = Date.now()
+  toy.inStock = true
+
+  return toy
 }

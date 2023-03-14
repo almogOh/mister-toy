@@ -2,12 +2,12 @@
   <header>
     <div class="main-header">
 
-      <h1 class="header-main-title">Pet Shop Toys</h1>
+      <img class="main-logo" src="../assets/img/logo.png">
 
       <nav class="header-main-nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/toys">Toys</router-link> |
-        <router-link to="/about">About</router-link>
+        <router-link to="/"><button class="header-btn">Home</button></router-link> |
+        <router-link to="/toys"><button class="header-btn">Toys</button></router-link> |
+        <router-link to="/about"><button class="header-btn">About</button></router-link>
       </nav>
 
     </div>
