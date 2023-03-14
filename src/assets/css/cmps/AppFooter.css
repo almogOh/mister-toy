@@ -3,6 +3,6 @@ footer {
     align-items: center;
     justify-content: space-between;
     
-    background-color: rgb(202, 76, 76);
+    background-color: var(--clr1);
     padding: 10px;
 }

@@ -57,7 +57,7 @@
     left: 0;
 }
 
-@media (max-width: 1435px){
+@media (max-width: 1435px) {
 
     .about-grid-container {
         grid-template-rows: 1fr 1fr;
@@ -77,4 +77,3 @@
         padding: 0;
     }
 }
-
