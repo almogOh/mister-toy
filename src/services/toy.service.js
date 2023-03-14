@@ -67,9 +67,12 @@ function _createToys() {
 
   if (!toys || !toys.length) {
     toys = [
-      _createToy('Lego Car', 100),
-      _createToy('Baby Doll', 50),
-      _createToy('Cowboy hat', 20),
+      _createToy('Sunil Nevla', 100),
+      _createToy('Zoe Trent (Rare)', 150),
+      _createToy('Russell Ferguson', 50),
+      _createToy('Hermit Crab', 50),
+      _createToy('Poodle', 90),
+      _createToy('Scottie', 110),
     ]
     localStorage.setItem(KEY, JSON.stringify(toys))
   }

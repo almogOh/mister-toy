@@ -1,6 +1,7 @@
 :root {
 
-  --clr0: rgb(202, 76, 76);
+  --clr0: rgba(23,29,81,255);
+  --clr1: rgba(208,68,155,255);
   
   
   --shadow: rgba(0, 0, 0, 0.39); /* Notes Shadow */

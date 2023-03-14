@@ -1,6 +1,17 @@
 header {
-    background-color: lightcoral;
+    background-color: var(--clr1); 
     padding: 10px;
+    border-radius: 20px;
+}
+
+.header-main-title {
+    color: var(--clr0); 
+    font-size: 50px;
+    margin-left: 20px;
+}
+
+.header-main-nav {
+    font-size: 30px;
 }
 /*
 header h5 span {
