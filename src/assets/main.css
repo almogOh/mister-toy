@@ -12,7 +12,10 @@
 @import './css/cmps/AppFooter.css';
 @import './css/cmps/AppHeader.css';
 @import './css/cmps/UserMessage.css';
+@import './css/cmps/ToyPreview.css';
+@import './css/cmps/ToyList.css';
 
 /* PAGES */
 @import './css/pages/AboutView.css';
 @import './css/pages/HomeView.css';
+@import './css/pages/ToyEdit.css';

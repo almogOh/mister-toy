@@ -5,9 +5,9 @@
       <img class="main-logo" src="../assets/img/logo.png">
 
       <nav class="header-main-nav">
-        <router-link to="/"><button class="header-btn">Home</button></router-link> |
-        <router-link to="/toys"><button class="header-btn">Toys</button></router-link> |
-        <router-link to="/about"><button class="header-btn">About</button></router-link>
+        <button @click="$router.push('/')" class="header-btn">Home</button> |
+        <button @click="$router.push('/toys')" class="header-btn">Toys</button> |
+        <button @click="$router.push('/about')" class="header-btn">About</button>
       </nav>
 
     </div>

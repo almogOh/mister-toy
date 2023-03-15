@@ -6,6 +6,7 @@
 
 <script>
 import { eventBus } from '../services/event-bus.service.js'
+
 export default {
   name: 'UserMessage',
   data() {

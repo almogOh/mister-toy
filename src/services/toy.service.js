@@ -78,7 +78,7 @@ function _createToys() {
       _createToy('Zoe Trent (Rare)', 150),
       _createToy('Russell Ferguson', 50),
       _createToy('Hermit Crab', 50),
-      _createToy('Poodle', 90),
+      _createToy('Poodle', 95),
       _createToy('Scottie', 110),
     ]
     utilService.saveToStorage(TOYS_KEY, toys)

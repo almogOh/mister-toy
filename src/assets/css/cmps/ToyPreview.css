@@ -1,0 +1,33 @@
+.toy-preview {
+    animation: bgc-animation 4s linear infinite;
+    height: 35vh;
+    width: 25vw;
+    text-align: center;
+    border-radius: 40px;
+    font-size: 20px;
+    color: var(--clr0); 
+    min-width: 100%;
+}
+
+@keyframes bgc-animation {
+    0%    {background-color: rgb(228, 151, 198)}
+    50% {background-color: rgb(226, 205, 218)}
+    100%    {background-color: rgb(228, 151, 198)}
+}
+
+.toy-preview-img {
+    height: 25vh;
+    max-width: 95%;
+}
+
+.toy-preview-name {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0;
+    padding: 5px;
+}
+
+.toy-preview-price {
+    margin: 0;
+    padding: 5px;
+}

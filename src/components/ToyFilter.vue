@@ -1,9 +1,7 @@
 <template>
-    <div class="filter">
-        <section class="toy-filter flex space-between">
-            <input class="input" v-model="filterBy.name" @input="setFilterName" type="text" placeholder="Search">
-            <div class="filter-btns flex align-center">
-            </div>
+    <div class="toy-filter">
+        <section class="toy-filter-container">
+            <input class="input" type="text" placeholder="Search" v-model="filterBy.name" @input="setFilterName">
         </section>
     </div>
 </template>
@@ -14,7 +12,7 @@ export default {
     data() {
         return {
             filterBy: {
-                name: '',
+                name: "",
                 labels: [],
                 inStock: false,
                 sortBy: {},
@@ -23,10 +21,13 @@ export default {
         }
     },
     methods: {
+        //TODO::: LABELS
         setFilterName() {
-            this.$emit('setFilter', { ...this.filterBy })
+            this.$emit("setFilter", { ...this.filterBy })
         },
     },
+    components: { 
+    }
 }
 </script>
 

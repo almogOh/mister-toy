@@ -31,9 +31,10 @@ header {
 .header-btn {
     height: 3vh;
     width: 6vw;
-    font-size: 30px;
+    font-size: 23px;
     border-radius: 10px;
     background-color: rgb(71, 71, 161);
     color: white;
     font-family: "Copperplate Gothic Light";
+    overflow: hidden;
 }

@@ -1,17 +1,13 @@
 <template>
-    <ul v-if="toys.length" class="clean-list toy-list">
-        <ToyPreview 
-            v-for="toy in toys" 
-            :key="toy._id" 
-            :toy="toy" 
-            @removed="$emit('removed', toy._id)" 
-        />
+    <ul v-if="toys.length" class="toy-list">
+        <ToyPreview :key="toy._id" v-for="toy in toys" :toy="toy" @removed="$emit('removed', toy._id)"/>
     </ul>
-    <p v-else>No toys to show..</p>
+    <p v-else>There are no toys for now</p>
 </template>
 
 <script>
 import ToyPreview from './ToyPreview.vue'
+
 export default {
     name: 'ToyList',
     props: {
