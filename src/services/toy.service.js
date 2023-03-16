@@ -36,7 +36,7 @@ function remove(toyId) {
   return httpService.delete(BASE_URL + toyId)
 }
 
-function save(toy) {
+function save(toyToSave) {
     /*if (toy._id) {
         return storageService.put(TOYS_KEY, toy)
     } else {

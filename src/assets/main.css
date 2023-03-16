@@ -14,8 +14,11 @@
 @import './css/cmps/UserMessage.css';
 @import './css/cmps/ToyPreview.css';
 @import './css/cmps/ToyList.css';
+@import './css/cmps/ToyFilter.css';
 
 /* PAGES */
 @import './css/pages/AboutView.css';
 @import './css/pages/HomeView.css';
 @import './css/pages/ToyEdit.css';
+@import './css/pages/ToyIndex.css';
+@import './css/pages/ToyDetails.css';

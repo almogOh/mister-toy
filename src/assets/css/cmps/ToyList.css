@@ -5,8 +5,7 @@
     list-style-type: none;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    min-width: 100%;
+    width: 100vw;
 }
 
 /*.toy-list {

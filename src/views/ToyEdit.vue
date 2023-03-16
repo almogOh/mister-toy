@@ -6,13 +6,13 @@
 
             <div class="toy-edit-add">
             <i class="addName">Name: </i><input class="inputName" v-model="toy.name" type="text">
-            <i class="addPrice">Price: </i><input class="inputPrice" v-model="toy.price" type="text">
+            <i class="addPrice">Price in ILS:</i><input class="inputPrice" v-model="toy.price" type="text">
             <i class="addStock">In Stock: </i><input class="inputStock" v-model="toy.inStock" type="number">
             </div>
         </form>
         
         <button @click="$router.push('/toys')" class="edit-cancel-btn">Cancel</button>
-        <button class="edit-save-btn">Save</button>
+        <button class="edit-save-btn" @click="saveToy">Save</button>
     </section>
 </template>
 
@@ -39,6 +39,7 @@ export default {
                         
                 } else {
                     this.toy = toyService.getEmptyToy()
+                    console.log('Empty toy (add)', this.toy)
                 }
             },
             immediate: true,
@@ -48,11 +49,11 @@ export default {
         saveToy() {
             this.$store.dispatch({ type: 'saveToy', toy: this.toy })
                 .then(toy => {
-                    showSuccessMsg("Done")
+                    showSuccessMsg("Saved Successfully")
                     this.$router.push('/toys')
                 })
                 .catch(err => {
-                    showErrorMsg("Error")
+                    showErrorMsg("Error, Cannot save")
                 })
         },
     },

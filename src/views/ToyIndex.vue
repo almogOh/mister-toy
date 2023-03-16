@@ -1,11 +1,12 @@
 <template>
   <main class="toy-index">
-    <h1>Toys</h1>
 
     <div class="toy-index-header">
-
-      <RouterLink class="index-add-btn" to="/toys/edit/"> <el-button type="success">Add</el-button></RouterLink>
-      <ToyFilter @setFilter="setFilter" />
+      <h1 class="toy-index-title">Shop Now!</h1>
+          <div class="toy-index-options">
+          <button class="index-add-btn" @click="$router.push('/toys/edit/')" >+ Add</button>
+          <ToyFilter @setFilter="setFilter" />
+        </div>
     </div>
 
     <div class="toy-index-list-container">

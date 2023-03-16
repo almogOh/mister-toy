@@ -1,0 +1,26 @@
+.filter-input-icon {
+    position: absolute;
+    left: 3px;
+    top: calc(50% - 0.5em);
+    margin-left: 2px;
+}
+
+.toy-filter-input {
+    padding-left: 22px;
+    padding-top: 2px;
+    height: 30px;
+    border-radius: 5px;
+    width: 500px;
+}
+
+.toy-filter-container {
+    position: relative;
+}
+
+@media (max-width: 1117px) {
+
+    .toy-filter-input {
+        width: 300px;
+    }
+
+}

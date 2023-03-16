@@ -1,7 +1,8 @@
 <template>
     <div class="toy-filter">
         <section class="toy-filter-container">
-            <input class="input" type="text" placeholder="Search" v-model="filterBy.name" @input="setFilterName">
+            <input id="search-inp" class="toy-filter-input" type="text" placeholder="Search" v-model="filterBy.name" @input="setFilterName">
+            <label for="search-inp" class="fa-solid fa-magnifying-glass filter-input-icon"></label>
         </section>
     </div>
 </template>

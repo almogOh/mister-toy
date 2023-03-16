@@ -3,7 +3,13 @@ import { toyService } from '../../services/toy.service.js'
 export const toyStore = {
 
   state: {
-    toys: null,
+    toys: [],
+    filterBy: {
+      inStock: '',
+      labels: [],
+      search: '',
+      sortBy: 'name',
+    },
   },
   getters: {
     toysToDisplay({ toys }) {
@@ -31,8 +37,7 @@ export const toyStore = {
   },
   actions: {
     loadToys({ commit }, { filterBy }) {
-      return toyService
-        .query(filterBy)
+      return toyService.query(filterBy)
         .then(toys => {
           commit({ type: 'setToys', toys })
         })
@@ -41,19 +46,36 @@ export const toyStore = {
         })
     },
     removeToy({ commit }, { toyId }) {
-      return toyService
-        .remove(toyId)
+      return toyService.remove(toyId)
         .then(() => {
           commit({ type: 'removeToy', toyId })
+        })
+        .catch((err) => {
+          console.error('Cannot remove toy', err)
+          throw err
         })
     },
     saveToy({ commit }, { toy }) {
       const actionType = toy._id ? 'updateToy' : 'addToy'
-      return toyService
-        .save(toy)
+      return toyService.save(toy)
         .then(savedToy => {
           commit({ type: actionType, toy: savedToy })
         })
+        .catch((err) => {
+          console.error('Cannot save toy', err)
+          throw err
+        })
+    },
+    setFilter({ commit }, { filterBy }) {
+      commit({ type: 'setFilterBy', filterBy })
+      toyService.query(filterBy)
+           .then(toys => {
+                commit({ type: 'setToys', toys })
+           })
+           .catch((err) => {
+                console.error('Cannot set filter', err)
+                throw err
+           })
     },
   },
 }
